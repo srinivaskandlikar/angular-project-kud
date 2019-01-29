@@ -1,0 +1,36 @@
+<!-- <img src="{{imgpath}}" [style.width.px]='width'> --> <!--  calling an image with interpolation -->
+<input [(ngModel)]='name'>
+{{name}}
+<img [src]='imgpath' [style.width.px]='width'> <!--  property binding -->
+{{allabc()}}
+<h2 [class]="all" >im from class</h2>
+<table *ngIf="showalldetails">
+<tr>
+<th class='{{all}}' [attr.colspan]='columnspan'>
+Employee Details
+</th>
+</tr>
+<tr>
+<td>First Name:</td>
+<td>{{fname ? fname: 'no first name'}}</td>
+</tr>
+<tr>
+<td>Last Name</td>
+<td>{{lname}}</td>
+</tr>
+<tr *ngIf='showDetails'>
+<td >Gender</td>
+<td>{{gender | uppercase}}</td>
+</tr>
+<tr>
+<td>Age</td>
+<td>{{age}}</td>
+</tr>
+</table>
+
+<button class="btn btn-primary" disabled='{{isdisabled}}'>test</button> <br/><br/><!-- how to disbale a button  -->
+<button class='{{allclasses}}' >im from class abcdef</button><br/><br/><!--combining two classes -->
+<button (click)='btnclick()'>im console</button> <br/><br/><!-- onclick event in console-->
+<button (click)="toggledetailsall()">{{showalldetails ?'hide':'show'}}details</button><!--hiding all details-->
+<button (click)='toggleDetails1()'>{{showDetails ? 'HideDetails' : 'ShowDetails'}}</button><br/><br/>
+<button [ngStyle]='addStyles()'>im from style binding</button> <!--style binding -->
